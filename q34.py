@@ -97,6 +97,7 @@ def point4(binary,upper,lower,threshold):
 
 def point3(binary,upper,lower,threshold):
 	mount = sum(sum(binary[upper:lower,:]))/255
+	print('point3 ',mount)
 	if mount < threshold:
 		flags[2] = 0
 
@@ -124,8 +125,8 @@ def point2(edges,upper,lower,threshold):
 def point1(blue_lines,upper,lower,upper_bound,lower_bound):
 	blue_lines = blue_lines[upper_bound:lower_bound]
 	part = math.floor((lower-upper)/3)
-	upper_part = max(blue_lines[upper:upper+2*part])
-	lower_part = max(blue_lines[lower-part:lower])
+	upper_part = max(blue_lines[upper:upper+part])
+	lower_part = max(blue_lines[lower-2*part:lower])
 	max_part = max(blue_lines[upper:lower])
 	if upper_part == max_part  :
 		flags[0] = 0
@@ -134,14 +135,14 @@ def point1(blue_lines,upper,lower,upper_bound,lower_bound):
 	print('max ',max_part)
 
 w_img = cv2.imread("./imgs/wrong_type_1.bmp")
-r_img = cv2.imread("./imgs/right.bmp")
+# r_img = cv2.imread("./imgs/bigr.bmp")
 img_h = 430
 img_w = 320
 flags = [1,1,1,1]
 
 ################################################################################
 # threshold from 30 to 50 is recomended
-gray, hsv, binary, gradient, edges, blue_area, img, upper_bound, lower_bound, left_bound, right_bound, blue_lines = feature_imgs(r_img,50,img_w,img_h)
+gray, hsv, binary, gradient, edges, blue_area, img, upper_bound, lower_bound, left_bound, right_bound, blue_lines = feature_imgs(w_img,30,img_w,img_h)
 print('upper ',upper_bound,' lower ',lower_bound, ' left ',left_bound,' right ',right_bound)
 
 # p4[270:300]
@@ -152,16 +153,17 @@ point1(blue_lines,0,50,upper_bound,lower_bound)
 # recomended threshold = 25
 point2(edges,50,80,25)
 # recomended threshold = 20
-point3(binary,255,265,20)
+point3(binary,255,265,30)
 # recomended threshold = 60
 point4(binary,270,300,60)
 
 ################################################################################
 # imshow
 cv2.imshow('gray',gray)
-cv2.imshow('blue_area',blue_area)
+cv2.imshow('blue_area',blue_area[0:32])
 cv2.imshow('binary',binary)
-cv2.imshow('edges',edges)
+cv2.imshow('binary_p3',binary[255:265])
+cv2.imshow('edges',edges[50:80])
 cv2.imshow('gradient',gradient)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
