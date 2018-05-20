@@ -1,0 +1,2 @@
+C:\Users\Dell\Desktop\Detector\Detector\obj\Debug\Detector.csprojResolveAssemblyReference.cache
+C:\Users\Dell\Desktop\Detector\Detector\obj\Debug\Detector.csproj.CoreCompileInputs.cache

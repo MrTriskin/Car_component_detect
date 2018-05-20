@@ -125,8 +125,8 @@ def point2(edges,upper,lower,threshold):
 def point1(blue_lines,upper,lower,upper_bound,lower_bound):
 	blue_lines = blue_lines[upper_bound:lower_bound]
 	part = math.floor((lower-upper)/3)
-	upper_part = max(blue_lines[upper:upper+part])
-	lower_part = max(blue_lines[lower-2*part:lower])
+	upper_part = max(blue_lines[upper:upper+2*part])
+	lower_part = max(blue_lines[lower-part:lower])
 	max_part = max(blue_lines[upper:lower])
 	if upper_part == max_part  :
 		flags[0] = 0
@@ -134,7 +134,7 @@ def point1(blue_lines,upper,lower,upper_bound,lower_bound):
 	print(' lower_part ', lower_part)
 	print('max ',max_part)
 
-w_img = cv2.imread("./imgs/wrong_type_1.bmp")
+w_img = cv2.imread("./imgs/0100a.bmp")
 # r_img = cv2.imread("./imgs/bigr.bmp")
 img_h = 430
 img_w = 320
@@ -160,10 +160,10 @@ point4(binary,270,300,60)
 ################################################################################
 # imshow
 cv2.imshow('gray',gray)
-cv2.imshow('blue_area',blue_area[0:32])
+cv2.imshow('blue_area',blue_area[0:33])
 cv2.imshow('binary',binary)
-cv2.imshow('binary_p3',binary[255:265])
-cv2.imshow('edges',edges[50:80])
+cv2.imshow('binary_p3',binary)
+cv2.imshow('edges',edges)
 cv2.imshow('gradient',gradient)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

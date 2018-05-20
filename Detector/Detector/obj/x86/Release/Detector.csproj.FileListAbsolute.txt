@@ -1,0 +1,11 @@
+C:\Users\Dell\Desktop\Detector\Detector\bin\x86\Release\Detector.dll
+C:\Users\Dell\Desktop\Detector\Detector\bin\x86\Release\Detector.pdb
+C:\Users\Dell\Desktop\Detector\Detector\bin\x86\Release\AForge.dll
+C:\Users\Dell\Desktop\Detector\Detector\bin\x86\Release\AForge.Imaging.dll
+C:\Users\Dell\Desktop\Detector\Detector\bin\x86\Release\AForge.Math.dll
+C:\Users\Dell\Desktop\Detector\Detector\bin\x86\Release\GxIAPINET.dll
+C:\Users\Dell\Desktop\Detector\Detector\obj\x86\Release\Detector.csprojResolveAssemblyReference.cache
+C:\Users\Dell\Desktop\Detector\Detector\obj\x86\Release\Detector.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\Detector\Detector\obj\x86\Release\Detector.csproj.CopyComplete
+C:\Users\Dell\Desktop\Detector\Detector\obj\x86\Release\Detector.dll
+C:\Users\Dell\Desktop\Detector\Detector\obj\x86\Release\Detector.pdb
